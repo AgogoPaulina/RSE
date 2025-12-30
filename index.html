@@ -116,7 +116,7 @@ fetch(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${RANGE}
   .catch(err=>console.error("Error fetching data:",err));
 
 function getIconURL(id){
-  return `https://minecraft.fandom.com/wiki/Special:FilePath/${encodeURIComponent(id)}.png`;
+  return `images/${id}.png`;
 }
 
 function displayItems(items){
@@ -230,3 +230,4 @@ document.getElementById('searchBar').addEventListener('input',e=>{
 
 </body>
 </html>
+
