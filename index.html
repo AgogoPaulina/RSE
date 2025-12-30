@@ -116,7 +116,10 @@ fetch(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${RANGE}
   .catch(err=>console.error("Error fetching data:",err));
 
 function getIconURL(id){
-  return `https://minecraft.fandom.com/wiki/Special:FilePath/${encodeURIComponent(id)}.png`;
+  // Zamienia spacje na podkreślenia
+  const fileName = id.replace(/ /g, '_');
+  // Bezpośredni link do pliku (raw) z Fandom/Wiki
+  return `https://static.wikia.nocookie.net/minecraft_gamepedia/images/${fileName}`;
 }
 
 function displayItems(items){
@@ -230,4 +233,5 @@ document.getElementById('searchBar').addEventListener('input',e=>{
 
 </body>
 </html>
+
 
